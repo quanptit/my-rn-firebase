@@ -15,6 +15,8 @@
     "firebase": "^5.9.2",
     "react-native-login": "git+https://gitlab.com/react-native-my-libs/react-native-login.git"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@firebase/app-types": "0.x"
+  },
   "peerDependencies": {}
 }
