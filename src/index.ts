@@ -1,4 +1,2 @@
-// export {ColorsCommon} from "./ColorsCommon";
-// declare global {
-//     interface VoidFunction {(): void;}
-// }
+export {FirebaseUtils} from "./FirebaseUtils";
+
