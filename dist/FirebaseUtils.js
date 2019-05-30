@@ -31,11 +31,15 @@ export class FirebaseUtils {
     /**
      * isSkipOfflineAfterComplete: offline sau khi complete
      */
-    static async excuteAllWaitCommand(isSkipOfflineAfterComplete) {
-        if (database == null)
+    static async excuteAllWaitCommand(FIRE_BASE_CONFIG, isSkipOfflineAfterComplete) {
+        if (database == null && FIRE_BASE_CONFIG == null) {
             sendError("Cần gọi hàm initFirebase trước");
-        if (!UserUtils.isLogged() || database == null)
             return;
+        }
+        if (!UserUtils.isLogged())
+            return;
+        if (FIRE_BASE_CONFIG && database == null)
+            FirebaseUtils.initFirebase(FIRE_BASE_CONFIG);
         console.log("Firebase excuteAllWaitCommand");
         let updates = await PreferenceUtils.getObject("FIREBASE_CMD");
         if (!updates || FirebaseUtils.isSyncing)
@@ -92,7 +96,7 @@ export class FirebaseUtils {
             });
             await Promise.all(promises);
         }
-        await FirebaseUtils.excuteAllWaitCommand(true);
+        await FirebaseUtils.excuteAllWaitCommand(null, true);
         console.log("asyncDatabaseFromFirebase Complete");
     }
     /**Chỉ gọi hàm này một lần khi login*/
@@ -102,7 +106,7 @@ export class FirebaseUtils {
         console.log("setUserDataAndAsyncFromFirebase");
         await FirebaseUtils.addUpdateCommand(getUserRefKeyOnFirebase() + "/user", UserUtils.getUserObj());
         await FirebaseUtils.addUpdateCommand(getRootRfStatisticStr() + getUserRefKeyOnFirebase() + "/lastTimeOpenApp", DataTypeUtils.getCurrentTimeSeconds());
-        await FirebaseUtils.excuteAllWaitCommand(true);
+        await FirebaseUtils.excuteAllWaitCommand(null, true);
         await FirebaseUtils.asyncDatabaseFromFirebase();
     }
     //endregion

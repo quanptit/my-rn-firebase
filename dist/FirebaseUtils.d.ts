@@ -2,12 +2,12 @@ export declare class FirebaseUtils {
     private static isSyncing;
     private static isCanNotDelete;
     private static isOnline;
-    static initFirebase(FIRE_BASE_CONFIG: Object): void;
+    private static initFirebase;
     static addUpdateCommand(refKey: any, value: any): Promise<void>;
     /**
      * isSkipOfflineAfterComplete: offline sau khi complete
      */
-    static excuteAllWaitCommand(isSkipOfflineAfterComplete?: boolean): Promise<void>;
+    static excuteAllWaitCommand(FIRE_BASE_CONFIG: Object, isSkipOfflineAfterComplete: boolean): Promise<void>;
     static asyncDatabaseFromFirebase(): Promise<void>;
     /**Chỉ gọi hàm này một lần khi login*/
     static setUserDataAndAsyncFromFirebase(): Promise<void>;
