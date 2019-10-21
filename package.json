@@ -12,7 +12,7 @@
   "license": "Quan Trinh Van",
   "nativePackage": true,
   "dependencies": {
-    "firebase": "^4.7.0",
+    "firebase": "^7.0.0",
     "react-native-login": "git+https://gitlab.com/react-native-my-libs/react-native-login.git"
   },
   "devDependencies": {
