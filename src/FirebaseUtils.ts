@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 import {DataTypeUtils, isEmpty, isIOS, PreferenceUtils, sendError} from "my-rn-base-utils";
-import {UserUtils} from "react-native-login";
+import {UserUtils} from "my-rn-login";
 
 let database: firebase.database.Database;
 

@@ -4,18 +4,26 @@
   "description": "my libs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "install_npm": "yarn install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "keywords": [
-    "firebase"
+    "react-native"
   ],
   "author": "Quan Trinh Van",
-  "license": "Quan Trinh Van",
-  "nativePackage": true,
+  "license": "ISC",
+  "homepage": "https://github.com/quanptit/my-rn-firebase",
+  "bugs": "https://github.com/quanptit/my-rn-firebase/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quanptit/my-rn-firebase.git"
+  },
   "dependencies": {
+    "@firebase/app-types": "0.x",
     "firebase": "^7.0.0",
-    "react-native-login": "git+https://gitlab.com/react-native-my-libs/react-native-login.git"
+    "my-rn-login": "^1.0.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "peerDependencies": {}
 }
