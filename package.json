@@ -1,6 +1,6 @@
 {
   "name": "my-rn-firebase",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "my libs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,7 +22,7 @@
   "dependencies": {
     "@firebase/app-types": "0.x",
     "firebase": "^7.0.0",
-    "my-rn-login": "^1.0.1"
+    "my-rn-login": ">=1.0.1"
   },
   "devDependencies": {},
   "peerDependencies": {}
